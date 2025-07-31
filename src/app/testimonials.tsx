@@ -50,28 +50,27 @@ const AutoplaySlider: KeenSliderPlugin = (slider) => {
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "Product Manager",
+    projectName: "WordPress Website Setup Needed",
+    name: "Gurtej S.",
+    loaction: "India",
     image: "/avatars/01.png",
-    text: "Working with Alphabit Tech Solutions was a game-changer. Their attention to detail and delivery speed was outstanding!",
+    remarks:
+      "Amrik was extremely professional, had immense knowledge and experience with Wordpress and was able to complete the task very quickly.",
   },
   {
-    name: "Jane Smith",
-    role: "Tech Lead",
-    image: "/avatars/02.png",
-    text: "Amazing team! Highly responsive and technically strong. They understood our vision and made it real.",
+    projectName: "Apply Figma design to Tailwind/NextJS/React",
+    name: "Muly",
+    location: "Iserile",
+    image: "/avatars/01.png",
+    remarks: "Good freelancer, hard-working and responsive.",
   },
   {
-    name: "Michael Lee",
-    role: "Startup Founder",
-    image: "/avatars/03.png",
-    text: "Their UI/UX and frontend implementation exceeded our expectations. Highly recommended.",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Marketing Head",
-    image: "/avatars/04.png",
-    text: "A very professional and experienced team that knows how to get things done efficiently.",
+    projectName: "Urgent Help Transposing HTML Table via Salesforce",
+    name: "Olu Adeosun",
+    location: "USA",
+    image: "/avatars/01.png",
+    remarks:
+      "Amrik was great. Couldn’t have asked for someone more knowledgeable about HTML, he was proficient and went the extra yard to meet requirements or understand what I needed.",
   },
 ];
 
@@ -120,7 +119,7 @@ export default function HeroBannerWithTestimonials() {
           <div ref={sliderRef} className="keen-slider">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="keen-slider__slide">
-                <Card className="bg-gray-800/50 backdrop-blur rounded-2xl shadow-xl p-6 h-full">
+                {/* <Card className="bg-gray-800/50 backdrop-blur rounded-2xl shadow-xl p-6 h-full">
                   <CardContent>
                     <p className="text-lg leading-relaxed mb-4">
                       "{testimonial.text}"
@@ -139,6 +138,35 @@ export default function HeroBannerWithTestimonials() {
                         <p className="font-semibold">{testimonial.name}</p>
                         <p className="text-sm text-gray-400">
                           {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card> */}
+                <Card className="bg-white text-white-900 rounded-2xl p-6 shadow-md max-w-md mx-auto">
+                  <CardContent>
+                    <p className="text-xl leading-relaxed mb-6 font-bold">
+                      “{testimonial.projectName}”
+                    </p>
+                    <p className="text-xl leading-relaxed mb-6 italic font-medium">
+                      “{testimonial.remarks}”
+                    </p>
+                    <div className="flex items-center gap-4 mt-4">
+                      <Avatar className="h-12 w-12">
+                        <AvatarImage
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                        />
+                        <AvatarFallback>
+                          {testimonial.name.charAt(0)}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="font-semibold text-base">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          {testimonial.location}
                         </p>
                       </div>
                     </div>
